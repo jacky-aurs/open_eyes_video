@@ -35,4 +35,7 @@ class Constancts {
 
 
   static const String IMAGE_ASSETS = "images/";
+
+  //底部tab
+  static const String IMAGE_TAB = "images/tab/";
 }

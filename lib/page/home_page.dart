@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/constants_page.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -7,6 +8,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: new Text(Constancts.TAB_HOME),
+    );
   }
 }

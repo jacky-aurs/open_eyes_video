@@ -1,4 +1,4 @@
-import 'package:douban/home_page.dart';
+import 'package:douban/home_main_page.dart';
 import 'package:flutter/material.dart';
 import 'utils/constants_page.dart';
 import './utils/screenutils_page.dart';
@@ -12,7 +12,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  Widget homePage = new HomePage();
+  Widget homePage = new HomeMainPage();
   bool isShowHomePage = true;
 
   @override
