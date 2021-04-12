@@ -32,4 +32,7 @@ class Constancts {
 
   static const String BOOK_VIDEO_HOT_IN = '影院热映';
   static const String BOOK_VIDEO_POPULAR = '影院热门';
+
+
+  static const String IMAGE_ASSETS = "images/";
 }
