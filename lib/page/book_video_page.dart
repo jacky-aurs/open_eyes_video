@@ -1,3 +1,4 @@
+import 'package:douban/widght/seach_page.dart';
 import 'package:flutter/material.dart';
 import '../utils/constants_page.dart';
 class BookVideoPage extends StatefulWidget {
@@ -8,8 +9,9 @@ class BookVideoPage extends StatefulWidget {
 class _BookVideoPageState extends State<BookVideoPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: new Text(Constancts.TAB_BOOK_VIDE),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: new SeachPage(seachTitle: Constancts.BOOK_VIDEO_SEACH),
     );
   }
 }

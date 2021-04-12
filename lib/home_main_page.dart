@@ -61,20 +61,20 @@ class _HomeMainPageState extends State<HomeMainPage> {
             _currentIndex = value;
           });
         },
-        backgroundColor: Colors.white70,
+        backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(
               icon: Image.asset(
                 _currentIndex == 0
                     ? Constancts.IMAGE_TAB + 'ic_tab_home_active.png'
                     : Constancts.IMAGE_TAB + 'ic_tab_home_normal.png',
-                height: 28.0,
-                width: 32.0,
+                height: 30.0,
+                width: 30.0,
               ),
               title: Text(
                 Constancts.TAB_HOME,
                 style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: 12.0,
                     color: _currentIndex == 0 ? Colors.green : Colors.black45),
               )),
           BottomNavigationBarItem(
@@ -82,13 +82,13 @@ class _HomeMainPageState extends State<HomeMainPage> {
                 _currentIndex == 1
                     ? Constancts.IMAGE_TAB + 'ic_tab_subject_active.png'
                     : Constancts.IMAGE_TAB + 'ic_tab_subject_normal.png',
-                height: 28.0,
-                width: 32.0,
+                height: 30.0,
+                width: 30.0,
               ),
               title: Text(
                 Constancts.TAB_BOOK_VIDE,
                 style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: 12.0,
                     color: _currentIndex == 1 ? Colors.green : Colors.black45),
               )),
           BottomNavigationBarItem(
@@ -96,13 +96,13 @@ class _HomeMainPageState extends State<HomeMainPage> {
                 _currentIndex == 2
                     ? Constancts.IMAGE_TAB + 'ic_tab_group_active.png'
                     : Constancts.IMAGE_TAB + 'ic_tab_group_normal.png',
-                height: 28.0,
-                width: 32.0,
+                height: 30.0,
+                width: 30.0,
               ),
               title: Text(
                 Constancts.TAB_GROUP,
                 style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: 12.0,
                     color: _currentIndex == 2 ? Colors.green : Colors.black45),
               )),
           BottomNavigationBarItem(
@@ -110,13 +110,13 @@ class _HomeMainPageState extends State<HomeMainPage> {
                 _currentIndex == 3
                     ? Constancts.IMAGE_TAB + 'ic_tab_shiji_active.png'
                     : Constancts.IMAGE_TAB + 'ic_tab_shiji_normal.png',
-                height: 28.0,
-                width: 32.0,
+                height: 30.0,
+                width: 30.0,
               ),
               title: Text(
                 Constancts.TAB_BAZAAR,
                 style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: 12.0,
                     color: _currentIndex == 3 ? Colors.green : Colors.black45),
               )),
           BottomNavigationBarItem(
@@ -124,13 +124,13 @@ class _HomeMainPageState extends State<HomeMainPage> {
                 _currentIndex == 4
                     ? Constancts.IMAGE_TAB + 'ic_tab_profile_active.png'
                     : Constancts.IMAGE_TAB + 'ic_tab_profile_normal.png',
-                height: 28.0,
-                width: 32.0,
+                height: 30.0,
+                width: 30.0,
               ),
               title: Text(
                 Constancts.TAB_ME,
                 style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: 12.0,
                     color: _currentIndex == 4 ? Colors.green : Colors.black45),
               ))
         ],
