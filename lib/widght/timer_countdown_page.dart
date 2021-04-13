@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-/**
- * 倒计时通用控件
- */
+///倒计时通用控件
 class TimerCountPage extends StatefulWidget {
   Function onTimerFinish;
 
