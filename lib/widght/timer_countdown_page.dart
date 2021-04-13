@@ -34,7 +34,7 @@ class _TimerCountPageState extends State<TimerCountPage> {
       },
       child: Text(
         _countDownTimer != 0 ? "跳过 $_countDownTimer" : "跳过 0",
-        style: TextStyle(fontSize: 14.0, color: Colors.white),
+        style: TextStyle(fontSize: 14.0, color: Colors.white,decoration: TextDecoration.none),
       ),
     );
   }
