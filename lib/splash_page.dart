@@ -1,5 +1,7 @@
 import 'package:douban/home_main_page.dart';
+import 'package:douban/page/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'utils/constants_page.dart';
 import './utils/screenutils_page.dart';
 import 'widght/timer_countdown_page.dart';
@@ -14,6 +16,12 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   Widget homePage = new HomeMainPage();
   bool isShowHomePage = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +63,6 @@ class _SplashPageState extends State<SplashPage> {
                             isShowHomePage = false;
                             print(isShowHomePage);
                           });
-
                         },
                       ),
                     ),
