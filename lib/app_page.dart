@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:douban/get_page/splash_page/view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'splash_page.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       color: Colors.white,
-      home: SplashPage(),
+      home: splash_pagePage(),
       debugShowCheckedModeBanner: false,
     );
   }
