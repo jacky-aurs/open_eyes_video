@@ -1,10 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'app_page.dart';
 import 'package:get/get.dart';
-import 'package:douban/utils/shared_preferences_util.dart';
+
 void main() {
   //设置状态栏为白底黑字
   const SystemUiOverlayStyle dark = SystemUiOverlayStyle(
@@ -16,6 +14,6 @@ void main() {
     statusBarBrightness: Brightness.light,
   );
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(GetMaterialApp(home:MyApp()));
+  runApp(GetMaterialApp(home: MyApp()));
   SystemChrome.setSystemUIOverlayStyle(dark);
 }

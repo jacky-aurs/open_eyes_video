@@ -38,7 +38,7 @@ class splash_pagePage extends StatelessWidget {
                     padding: EdgeInsets.only(left: 10.0),
                     child: TimerCountPage(onTimerFinish: () {
                       print("倒计时结束--------");
-                      Get.off(logic.homePage);
+                      Get.off(logic.homeMainPage);
                     }),
                   ),
                 ),
