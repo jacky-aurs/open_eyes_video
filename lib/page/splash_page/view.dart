@@ -1,6 +1,5 @@
-import 'package:douban/page/home_page.dart';
 import 'package:douban/utils/constants_page.dart';
-import 'package:douban/utils/screenutils_page.dart';
+import 'package:douban/utils/screen_utils.dart';
 import 'package:douban/widght/timer_countdown_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,7 +7,6 @@ import 'logic.dart';
 
 class splash_pagePage extends StatelessWidget {
   final splash_pageLogic logic = Get.put(splash_pageLogic());
-
   @override
   Widget build(BuildContext context) {
     return Stack(
