@@ -1,4 +1,4 @@
-import 'package:douban/utils/screenutils_page.dart';
+import 'package:douban/utils/screen_utils.dart';
 import 'package:flutter/material.dart';
 
 class SeachPage extends StatefulWidget {

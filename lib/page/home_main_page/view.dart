@@ -2,7 +2,6 @@ import 'package:douban/page/bazaar_page.dart';
 import 'package:douban/page/book_video_page.dart';
 import 'package:douban/page/group_page.dart';
 import 'package:douban/page/home_page.dart';
-import 'package:douban/page/me_page.dart';
 import 'package:douban/utils/constants_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,10 +10,8 @@ import 'logic.dart';
 
 class HomeMainPage extends StatelessWidget {
   final HomeMainPageLogic logic = Get.put(HomeMainPageLogic());
-
   HomePage homePage;
   BazaarPage bazaarPage;
-  MePage mePage;
   BookVideoPage bookVideoPage;
   GroupPage groupPage;
 
