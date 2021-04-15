@@ -7,6 +7,8 @@ import 'result_data.dart';
 import 'address.dart';
 
 class HttpManager {
+  static const CONTENT_TYPE_FORM = "application/x-www-form-urlencoded";
+
   static HttpManager _instance = HttpManager._internal();
   Dio _dio;
 
@@ -18,16 +20,16 @@ class HttpManager {
   ///通用全局单例，第一次使用时初始化
   HttpManager._internal({String baseUrl}) {
     if (null == _dio) {
-      _dio = new Dio(
-          new BaseOptions(baseUrl: Address.BASE_URL,
-              connectTimeout: 60000,
-              receiveTimeout: 60000,
-              responseType: ResponseType.json,
-              // validateStatus: (status) {
-              //   // 不使用http状态码判断状态，使用AdapterInterceptor来处理（适用于标准REST风格）
-              //   return true;
-              // },
-              headers: httpHeaders));
+      _dio = new Dio(new BaseOptions(
+          baseUrl: Address.BASE_URL,
+          connectTimeout: 60000,
+          receiveTimeout: 60000,
+          responseType: ResponseType.json,
+          // validateStatus: (status) {
+          //   // 不使用http状态码判断状态，使用AdapterInterceptor来处理（适用于标准REST风格）
+          //   return true;
+          // },
+          headers: httpHeaders));
       _dio.interceptors.add(new DioLogInterceptor());
 //      _dio.interceptors.add(new PrettyDioLogger());
       _dio.interceptors.add(new ResponseInterceptors());
@@ -131,7 +133,6 @@ ResultData resultError(DioError e) {
 
 /// 自定义Header
 Map<String, dynamic> httpHeaders = {
-'Accept': 'application/json,*/*',
-'Content-Type': 'application/json',
-'token': ""
+  "content-type": HttpManager.CONTENT_TYPE_FORM,
+  "responseType": ResponseType.plain
 };

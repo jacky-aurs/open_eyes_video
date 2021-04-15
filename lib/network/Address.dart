@@ -4,6 +4,16 @@ class Address{
 
  static const String ACCOUNT_BASE_URL = "https://account.kaiyanapp.com";
 
+ ///首页->日报
+ static const String DAILY = "/api/v5/index/tab/feed";
+
+ ///社区->推荐
+ static const String COMMUNITY_RECOMMEND = "/api/v7/community/tab/rec";
+
+ ///首页->发现
+ static const String DISCOVER = "/api/v7/index/tab/discovery";
+
+
  ///获取验证码
  static const String GET_VERIFICATION_CODE = "/v1/api/sms/initialization";
 
@@ -13,14 +23,6 @@ class Address{
  ///登录
  static const String LOGIN = "/v1/api/login";
 
- ///首页->发现
- static const String DISCOVER = "/api/v7/index/tab/discovery";
-
- ///首页->日报
- static const String DAILY = "/api/v5/index/tab/feed";
-
- ///社区->推荐
- static const String COMMUNITY_RECOMMEND = "/api/v7/community/tab/rec";
 
  ///视频详情
  static const String VIDEO_DETAIL = "/api/v2/video/";

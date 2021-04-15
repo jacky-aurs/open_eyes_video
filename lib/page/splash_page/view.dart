@@ -7,6 +7,7 @@ import 'logic.dart';
 
 class splash_pagePage extends StatelessWidget {
   final splash_pageLogic logic = Get.put(splash_pageLogic());
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -16,7 +17,7 @@ class splash_pagePage extends StatelessWidget {
             fit: StackFit.loose,
             children: [
               Image.asset(
-                Constancts.IMAGE_ASSETS + "splash.png",
+                Constancts.IMAGE_ASSETS + "splash.jpg",
                 fit: BoxFit.cover,
                 height: ScreenUtils.screenH(context),
                 width: ScreenUtils.screenW(context),

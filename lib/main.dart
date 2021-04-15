@@ -1,7 +1,6 @@
+import 'package:douban/page/splash_page/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get_storage/get_storage.dart';
-import 'app_page.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -15,7 +14,10 @@ void main() async {
     statusBarBrightness: Brightness.light,
   );
   WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init(); //初始化数据持久化存储
-  runApp(GetMaterialApp(home: MyApp()));
+  runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: true,
+    color: Colors.white,
+    home: splash_pagePage(),
+  ));
   SystemChrome.setSystemUIOverlayStyle(dark);
 }

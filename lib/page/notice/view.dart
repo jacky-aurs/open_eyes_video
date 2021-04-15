@@ -1,3 +1,5 @@
+import 'package:douban/utils/constants_page.dart';
+import 'package:douban/widght/seach_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +10,9 @@ class NoticePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: new SeachPage(seachTitle: Constancts.HOME_SEAACH_TITLE),
+    );
   }
 }

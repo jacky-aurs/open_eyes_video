@@ -1,7 +1,7 @@
-import 'package:douban/page/bazaar_page.dart';
-import 'package:douban/page/book_video_page.dart';
-import 'package:douban/page/group_page.dart';
-import 'package:douban/page/home_page.dart';
+import 'package:douban/page/community/view.dart';
+import 'package:douban/page/home/view.dart';
+import 'package:douban/page/mine/view.dart';
+import 'package:douban/page/notice/view.dart';
 import 'package:douban/utils/constants_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,9 +11,9 @@ import 'logic.dart';
 class HomeMainPage extends StatelessWidget {
   final HomeMainPageLogic logic = Get.put(HomeMainPageLogic());
   HomePage homePage;
-  BazaarPage bazaarPage;
-  BookVideoPage bookVideoPage;
-  GroupPage groupPage;
+  CommunityPage communityPage;
+  NoticePage noticePage;
+  MinePage minePage;
 
   CurrentPage() {
     switch (logic.currentIndex.value) {
@@ -23,20 +23,20 @@ class HomeMainPage extends StatelessWidget {
         }
         return homePage;
       case 1:
-        if (bookVideoPage == null) {
-          bookVideoPage = new BookVideoPage();
+        if (communityPage == null) {
+          communityPage = new CommunityPage();
         }
-        return bookVideoPage;
+        return communityPage;
       case 2:
-        if (groupPage == null) {
-          groupPage = new GroupPage();
+        if (noticePage == null) {
+          noticePage = new NoticePage();
         }
-        return bookVideoPage;
+        return noticePage;
       case 3:
-        if (bazaarPage == null) {
-          bazaarPage = new BazaarPage();
+        if (minePage == null) {
+          minePage = new MinePage();
         }
-        return bazaarPage;
+        return minePage;
     }
     var a = logic.currentIndex.value;
     print("当前点击的下标 $a");
@@ -119,7 +119,7 @@ class HomeMainPage extends StatelessWidget {
         ],
         type: BottomNavigationBarType.fixed,
       ),
-      body: CurrentPage(),
+      body: Obx(()=>CurrentPage()),
     );
   }
 }

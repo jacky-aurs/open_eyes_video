@@ -1,10 +1,9 @@
 class Constancts {
   static const String SPLASH_NAME = '跳过';
   static const String TAB_HOME = '首页';
-  static const String TAB_BOOK_VIDE = '书影音';
-  static const String TAB_GROUP = '小组';
-  static const String TAB_BAZAAR = '市集';
-  static const String TAB_ME = '我';
+  static const String TAB_BOOK_VIDE = '社区';
+  static const String TAB_GROUP = '通知';
+  static const String TAB_BAZAAR = '我的';
 
   static const String CANNEL = '取消';
   static const String OK = '确定';
@@ -36,12 +35,8 @@ class Constancts {
   static const String BOOK_VIDEO_HOT_IN = '影院热映';
   static const String BOOK_VIDEO_POPULAR = '影院热门';
 
-
-
-
-
-
   //底部tab
   static const String IMAGE_ASSETS = "images/";
   static const String IMAGE_TAB = "images/tab/";
+  static const String IMAGE_TAB_MINE = "images/mine/";
 }
