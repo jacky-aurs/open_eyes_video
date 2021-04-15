@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MineItem extends StatelessWidget {
+class MoreItem extends StatelessWidget {
   final String text;
   final int value;
 
-  const MineItem({Key key, @required this.text, @required this.value})
+  const MoreItem({Key key, @required this.text, @required this.value})
       : super(key: key);
 
   @override
@@ -40,7 +40,7 @@ class MineItem extends StatelessWidget {
               height: 80,
               child: Text(
                 text,
-                style: TextStyle(color: Colors.black, fontSize: 16,),
+                style: TextStyle(color: Colors.black, fontSize: 14,),
               ),
             )));
   }

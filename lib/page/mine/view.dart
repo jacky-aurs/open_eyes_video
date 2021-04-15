@@ -1,7 +1,5 @@
-import 'dart:io';
-
+import 'package:douban/page/mine/more/view.dart';
 import 'package:douban/utils/constants_page.dart';
-import 'package:douban/utils/device_info.dart';
 import 'package:douban/utils/screen_utils.dart';
 import 'package:douban/widght/mine_item_page.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +10,10 @@ import 'logic.dart';
 
 class MinePage extends StatelessWidget {
   final MineLogic logic = Get.put(MineLogic());
-  final Future<String> deveInfo = "Unknown" as Future<String>;
 
   @override
   Widget build(BuildContext context) {
+    logic.versionInfo();
     const SystemUiOverlayStyle dark = SystemUiOverlayStyle(
       systemNavigationBarColor: Color(0xFF000000),
       systemNavigationBarDividerColor: null,
@@ -128,35 +126,45 @@ class MinePage extends StatelessWidget {
                   ),
                   Container(
                     alignment: Alignment.topRight,
-                    child: Image.asset(
-                      Constancts.IMAGE_TAB_MINE + 'ic_action_more_grey.png',
-                      height: 40,
-                      width: 40,
-                    ),
+                    child: InkWell(
+                      child: Image.asset(
+                        Constancts.IMAGE_TAB_MINE + 'ic_action_more_grey.png',
+                        height: 40,
+                        width: 40,
+                      ),
+                      onTap: (){
+                        Get.to(MorePage(),popGesture: true);
+                      },
+                    )
                   ),
                 ],
               ),
             ),
-            ListView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                MineItem(text: "我的关注", value: 0),
-                MineItem(text: "观看记录", value: 1),
-                MineItem(text: "我的徽章", value: 2),
-                MineItem(text: "功能设置", value: 3),
-                MineItem(text: "成为作者", value: 4),
-                Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                        height: 80,
-                        child: Obx(
-                          () => Text(
-                            "version ${logic.packageVersionInfo.value}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
-                          ),
-                        )))
-              ],
+            SingleChildScrollView(
+              padding: EdgeInsets.only(top: 20),
+              scrollDirection: Axis.vertical,
+              reverse: true,///是否滑动到底部
+              physics: AlwaysScrollableScrollPhysics(),
+              child: Column(
+                children: [
+                  MineItem(text: "我的关注", value: 0),
+                  MineItem(text: "观看记录", value: 1),
+                  MineItem(text: "我的徽章", value: 2),
+                  MineItem(text: "功能设置", value: 3),
+                  MineItem(text: "成为作者", value: 4),
+                  Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                          height: 90,
+                          child: Obx(
+                                () => Text(
+                              "version ${logic.packageVersionInfo.value}",
+                              style: TextStyle(color: Colors.grey, fontSize: 12),
+                            ),
+                          )))
+                ],
+              ),
+
             )
           ],
         ));

@@ -9,7 +9,7 @@ class MineLogic extends GetxController {
     DeviceInfoPlugin deviceInfo = new DeviceInfoPlugin();
     if (Platform.isAndroid) {
       AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-      packageVersionInfo = androidInfo.version.toString().obs;
+      packageVersionInfo = androidInfo.version.release.obs;
     } else if (Platform.isIOS) {
       IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
       packageVersionInfo = iosInfo.systemVersion.toString().obs;

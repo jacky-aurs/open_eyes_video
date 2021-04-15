@@ -1,3 +1,4 @@
+import 'package:douban/page/home_main_page/view.dart';
 import 'package:douban/utils/constants_page.dart';
 import 'package:douban/utils/screen_utils.dart';
 import 'package:douban/widght/timer_countdown_page.dart';
@@ -37,7 +38,9 @@ class splash_pagePage extends StatelessWidget {
                     padding: EdgeInsets.only(left: 10.0),
                     child: TimerCountPage(onTimerFinish: () {
                       print("倒计时结束--------");
-                      Get.off(logic.homeMainPage);
+
+                      // ignore: unnecessary_statements
+                      Get.to(HomeMainPage());
                     }),
                   ),
                 ),
