@@ -1,9 +1,9 @@
 class Constancts {
   static const String SPLASH_NAME = '跳过';
-  static const String TAB_HOME = '首页';
-  static const String TAB_BOOK_VIDE = '社区';
-  static const String TAB_GROUP = '通知';
-  static const String TAB_BAZAAR = '我的';
+  static const String TAB_HOME = '首 页';
+  static const String TAB_BOOK_VIDE = '社 区';
+  static const String TAB_GROUP = '通 知';
+  static const String TAB_BAZAAR = '我 的';
 
   static const String CANNEL = '取消';
   static const String OK = '确定';

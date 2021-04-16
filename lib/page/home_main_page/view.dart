@@ -45,81 +45,88 @@ class HomeMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: logic.currentIndex.value,
-        onTap: (value) {
-          logic.changeIndex(value);
-        },
-        backgroundColor: Colors.white,
-        items: [
-          BottomNavigationBarItem(
-              icon: Obx(() => Image.asset(
-                    logic.currentIndex.value == 0
-                        ? Constancts.IMAGE_TAB + 'ic_tab_home_active.png'
-                        : Constancts.IMAGE_TAB + 'ic_tab_home_normal.png',
-                    height: 30.0,
-                    width: 30.0,
-                  )),
-              title: Obx(() => Text(
-                    Constancts.TAB_HOME,
-                    style: TextStyle(
-                        fontSize: 12.0,
-                        color: logic.currentIndex.value == 0
-                            ? Colors.green
-                            : Colors.black45),
-                  ))),
-          BottomNavigationBarItem(
-              icon: Obx(() => Image.asset(
-                    logic.currentIndex.value == 1
-                        ? Constancts.IMAGE_TAB + 'ic_tab_subject_active.png'
-                        : Constancts.IMAGE_TAB + 'ic_tab_subject_normal.png',
-                    height: 30.0,
-                    width: 30.0,
-                  )),
-              title: Obx(() => Text(
-                    Constancts.TAB_BOOK_VIDE,
-                    style: TextStyle(
-                        fontSize: 12.0,
-                        color: logic.currentIndex.value == 1
-                            ? Colors.green
-                            : Colors.black45),
-                  ))),
-          BottomNavigationBarItem(
-              icon: Obx(() => Image.asset(
-                    logic.currentIndex.value == 2
-                        ? Constancts.IMAGE_TAB + 'ic_tab_group_active.png'
-                        : Constancts.IMAGE_TAB + 'ic_tab_group_normal.png',
-                    height: 30.0,
-                    width: 30.0,
-                  )),
-              title: Obx(() => Text(
-                    Constancts.TAB_GROUP,
-                    style: TextStyle(
-                        fontSize: 12.0,
-                        color: logic.currentIndex.value == 2
-                            ? Colors.green
-                            : Colors.black45),
-                  ))),
-          BottomNavigationBarItem(
-              icon: Obx(() => Image.asset(
-                    logic.currentIndex.value == 3
-                        ? Constancts.IMAGE_TAB + 'ic_tab_shiji_active.png'
-                        : Constancts.IMAGE_TAB + 'ic_tab_shiji_normal.png',
-                    height: 30.0,
-                    width: 30.0,
-                  )),
-              title: Obx(() => Text(
-                    Constancts.TAB_BAZAAR,
-                    style: TextStyle(
-                        fontSize: 12.0,
-                        color: logic.currentIndex.value == 3
-                            ? Colors.green
-                            : Colors.black45),
-                  ))),
-        ],
-        type: BottomNavigationBarType.fixed,
+      bottomNavigationBar: Theme(
+        data: ThemeData(
+          brightness: Brightness.light,
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+        ),
+        child: BottomNavigationBar(
+          currentIndex: logic.currentIndex.value,
+          onTap: (value) {
+            logic.changeIndex(value);
+          },
+          backgroundColor: Colors.white,
+          items: [
+            BottomNavigationBarItem(
+                icon: Obx(() => Image.asset(
+                      logic.currentIndex.value == 0
+                          ? Constancts.IMAGE_TAB + 'ic_tab_home_active.png'
+                          : Constancts.IMAGE_TAB + 'ic_tab_home_normal.png',
+                      height: 20.0,
+                      width: 20.0,
+                    )),
+                title: Obx(() => Text(
+                      Constancts.TAB_HOME,
+                      style: TextStyle(
+                          fontSize: 10.0,
+                          color: logic.currentIndex.value == 0
+                              ? Color(0xFF4a0b6d)
+                              : Colors.black45),
+                    ))),
+            BottomNavigationBarItem(
+                icon: Obx(() => Image.asset(
+                      logic.currentIndex.value == 1
+                          ? Constancts.IMAGE_TAB + 'ic_tab_subject_normal.png'
+                          : Constancts.IMAGE_TAB + 'ic_tab_subject_active.png',
+                      height: 20.0,
+                      width: 20.0,
+                    )),
+                title: Obx(() => Text(
+                      Constancts.TAB_BOOK_VIDE,
+                      style: TextStyle(
+                          fontSize: 10.0,
+                          color: logic.currentIndex.value == 1
+                              ? Color(0xFF4a0b6d)
+                              : Colors.black45),
+                    ))),
+            BottomNavigationBarItem(
+                icon: Obx(() => Image.asset(
+                      logic.currentIndex.value == 2
+                          ? Constancts.IMAGE_TAB + 'ic_tab_group_normal.png'
+                          : Constancts.IMAGE_TAB + 'ic_tab_group_active.png',
+                      height: 20.0,
+                      width: 20.0,
+                    )),
+                title: Obx(() => Text(
+                      Constancts.TAB_GROUP,
+                      style: TextStyle(
+                          fontSize: 10.0,
+                          color: logic.currentIndex.value == 2
+                              ? Color(0xFF4a0b6d)
+                              : Colors.black45),
+                    ))),
+            BottomNavigationBarItem(
+                icon: Obx(() => Image.asset(
+                      logic.currentIndex.value == 3
+                          ? Constancts.IMAGE_TAB + 'ic_tab_shiji_active.png'
+                          : Constancts.IMAGE_TAB + 'ic_tab_shiji_normal.png',
+                      height: 20.0,
+                      width: 20.0,
+                    )),
+                title: Obx(() => Text(
+                      Constancts.TAB_BAZAAR,
+                      style: TextStyle(
+                          fontSize: 10.0,
+                          color: logic.currentIndex.value == 3
+                              ? Color(0xFF4a0b6d)
+                              : Colors.black45),
+                    ))),
+          ],
+          type: BottomNavigationBarType.fixed,
+        ),
       ),
-      body: Obx(()=>CurrentPage()),
+      body: Obx(() => CurrentPage()),
     );
   }
 }

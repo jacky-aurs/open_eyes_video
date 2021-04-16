@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 ///倒计时通用控件
-class TimerCountPage extends StatefulWidget {
+class RegisterCustomDownTimer extends StatefulWidget {
   Function onTimerFinish;
 
-  TimerCountPage({this.onTimerFinish}) : super();
+  RegisterCustomDownTimer({this.onTimerFinish}) : super();
 
   @override
-  _TimerCountPageState createState() => _TimerCountPageState();
+  _RegisterCustomDownTimer createState() => _RegisterCustomDownTimer();
 }
 
-class _TimerCountPageState extends State<TimerCountPage> {
+class _RegisterCustomDownTimer extends State<RegisterCustomDownTimer> {
   Timer _timer;
   int _countDownTimer = 5;
 

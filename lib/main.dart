@@ -15,6 +15,7 @@ void main() async {
   );
   WidgetsFlutterBinding.ensureInitialized();
   runApp(GetMaterialApp(
+    defaultTransition: Transition.fadeIn,
     debugShowCheckedModeBanner: true,
     color: Colors.white,
     home: splash_pagePage(),

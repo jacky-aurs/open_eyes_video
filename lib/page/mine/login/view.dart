@@ -8,6 +8,18 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          '登录',
+          style: TextStyle(fontSize: 15, color: Colors.black),
+        ),
+      ),
+      body: Column(
+        children: [],
+      ),
+    );
   }
 }

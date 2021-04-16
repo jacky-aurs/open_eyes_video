@@ -1,3 +1,4 @@
+import 'package:douban/page/mine/register/view.dart';
 import 'package:douban/utils/screen_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +15,9 @@ class MineItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          print('value值是 ${value}');
           switch (value) {
             case 0:
-              Get.snackbar("提示", "请先登录APP");
+              Get.to(RegisterPage());
               break;
             case 1:
               Get.snackbar("提示", "请先登录APP");
@@ -40,7 +40,10 @@ class MineItem extends StatelessWidget {
               height: 80,
               child: Text(
                 text,
-                style: TextStyle(color: Colors.black, fontSize: 16,),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
               ),
             )));
   }

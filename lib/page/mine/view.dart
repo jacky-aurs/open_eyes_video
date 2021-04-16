@@ -45,10 +45,12 @@ class MinePage extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(80.0),
                               color: Colors.black12),
-                          child: Image.asset(
-                            Constancts.IMAGE_TAB_MINE + 'mine_ava.png',
-                            height: 80,
-                            width: 80,
+                          child: InkWell(
+                            child: Image.asset(
+                              Constancts.IMAGE_TAB_MINE + 'mine_ava.png',
+                              height: 80,
+                              width: 80,
+                            ),
                           ),
                         ),
                         Padding(
@@ -125,25 +127,26 @@ class MinePage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    alignment: Alignment.topRight,
-                    child: InkWell(
-                      child: Image.asset(
-                        Constancts.IMAGE_TAB_MINE + 'ic_action_more_grey.png',
-                        height: 40,
-                        width: 40,
-                      ),
-                      onTap: (){
-                        Get.to(MorePage(),popGesture: true);
-                      },
-                    )
-                  ),
+                      alignment: Alignment.topRight,
+                      child: InkWell(
+                        child: Image.asset(
+                          Constancts.IMAGE_TAB_MINE + 'ic_action_more_grey.png',
+                          height: 40,
+                          width: 40,
+                        ),
+                        onTap: () {
+                          Get.to(MorePage());
+                        },
+                      )),
                 ],
               ),
             ),
             SingleChildScrollView(
               padding: EdgeInsets.only(top: 20),
               scrollDirection: Axis.vertical,
-              reverse: true,///是否滑动到底部
+              reverse: true,
+
+              ///是否滑动到底部
               physics: AlwaysScrollableScrollPhysics(),
               child: Column(
                 children: [
@@ -157,14 +160,14 @@ class MinePage extends StatelessWidget {
                       child: Container(
                           height: 90,
                           child: Obx(
-                                () => Text(
+                            () => Text(
                               "version ${logic.packageVersionInfo.value}",
-                              style: TextStyle(color: Colors.grey, fontSize: 12),
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 12),
                             ),
                           )))
                 ],
               ),
-
             )
           ],
         ));

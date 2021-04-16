@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 class MineLogic extends GetxController {
   RxString packageVersionInfo = "Unknown".obs;
-
   void versionInfo() async {
     DeviceInfoPlugin deviceInfo = new DeviceInfoPlugin();
     if (Platform.isAndroid) {
