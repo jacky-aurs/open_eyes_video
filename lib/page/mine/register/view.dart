@@ -1,4 +1,8 @@
+import 'package:douban/network/Address.dart';
+import 'package:douban/network/http_manager.dart';
+import 'package:douban/page/mine/login/view.dart';
 import 'package:douban/widght/CountDownButton.dart';
+import 'package:douban/widght/WebViewPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -41,44 +45,44 @@ class RegisterPage extends StatelessWidget {
           children: [
             Padding(padding: EdgeInsets.only(top: 40)),
             Container(
-              alignment: Alignment.center,
-              height: 40,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15), color: Colors.black),
+                  borderRadius: BorderRadius.circular(15), color:  Colors.black),
+              height: 40,
               margin: EdgeInsets.fromLTRB(25, 10, 25, 0),
               child: Padding(
-                padding: EdgeInsets.only(
-                  left: 10,
-                  top: 15,
-                ),
+                padding: EdgeInsets.only(left: 10,top: 15),
                 child: TextField(
-                  controller: phoneController,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  maxLength: 11,
-                  decoration: InputDecoration(
-                    hintText: "请输入手机号",
-                    border: InputBorder.none,
-                    hintStyle: TextStyle(fontSize: 15, color: Colors.white),
+                  style: TextStyle(
+                      color: Colors.white
                   ),
-                  style: TextStyle(),
+                  obscureText: false,
+                  cursorColor: Colors.white,
+                  controller: phoneController,
+                  decoration: InputDecoration(
+                      hintText: "请输入手机号",
+                      hintStyle: TextStyle(fontSize: 15, color: Colors.white),
+                      border: InputBorder.none),
                 ),
               ),
             ),
+
             Container(
                 margin: EdgeInsets.fromLTRB(25, 10, 25, 0),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, top: 15),
-                      child: Expanded(
+                      Expanded(
                           flex: 1,
                           child: Container(
+                            padding: EdgeInsets.only(left: 10),
                             height: 40,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
-                                color: Colors.black),
+                                color:  Colors.black),
                             child: TextField(
-                              cursorColor: Colors.blueAccent,
+                              style: TextStyle(
+                                  color: Colors.white
+                              ),
+                              cursorColor: Colors.white,
                               controller: verificationCodeController,
                               decoration: InputDecoration(
                                   hintText: "请输入验证码",
@@ -87,7 +91,6 @@ class RegisterPage extends StatelessWidget {
                                   border: InputBorder.none),
                             ),
                           )),
-                    ),
                     SizedBox(width: 10),
                     CountDownButton(
                         text: "获取验证码",
@@ -106,13 +109,17 @@ class RegisterPage extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(left: 10,top: 15),
                 child: TextField(
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
                   obscureText: true,
-                  cursorColor: Colors.blueAccent,
+                  cursorColor: Colors.white,
                   controller: passwordController,
                   decoration: InputDecoration(
                       hintText: "请输入密码",
-                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey),
+                      hintStyle: TextStyle(fontSize: 15, color: Colors.white),
                       border: InputBorder.none),
+
                 ),
               ),
             ),
@@ -122,10 +129,7 @@ class RegisterPage extends StatelessWidget {
                 height: 45,
                 child: RaisedButton(
                   onPressed: () {
-                    // register(
-                    //     phoneController.text,
-                    //     verificationCodeController.text,
-                    //     passwordController.text);
+                    // HttpManager.getInstance(Address.ACCOUNT_BASE_URL)
                   },
                   child: Text("注册",
                       style: TextStyle(color: Colors.white, fontSize: 18)),
@@ -141,10 +145,9 @@ class RegisterPage extends StatelessWidget {
                   height: 45,
                   child: RaisedButton(
                     onPressed: () {
-                      // register(
-                      //     phoneController.text,
-                      //     verificationCodeController.text,
-                      //     passwordController.text);
+                      // Get.off(LoginPage());
+                      var page = new WebView(url: 'https://www.baidu.com/', title: '百度');
+                      Get.off(page);
                     },
                     child: Text("登录",
                         style: TextStyle(color: Colors.white, fontSize: 18)),

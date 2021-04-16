@@ -69,7 +69,9 @@ class CountDownState extends State<CountDownButton> {
   @override
   void dispose() {
     super.dispose();
-    countDownTimer.cancel();
-    countDownTimer = null;
+    if(countDownTimer !=null){
+      countDownTimer.cancel();
+      countDownTimer = null;
+    }
   }
 }
