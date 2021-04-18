@@ -6,13 +6,29 @@ import 'package:get/get.dart';
 import 'logic.dart';
 
 class NoticePage extends StatelessWidget {
-  final NoticeLogic logic = Get.put(NoticeLogic());
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: new SeachPage(seachTitle: Constancts.HOME_SEAACH_TITLE),
+    final NoticeLogic logic = Get.put(NoticeLogic());
+    return MaterialApp(
+      home: SafeArea(
+        child: Scaffold(
+          appBar: TabBar(
+            controller: logic.tabController,
+            tabs: logic.tabs,
+            unselectedLabelColor: Colors.black45,
+            labelColor: Colors.black,
+            indicatorColor: Colors.white,
+          ),
+          body: TabBarView(
+            controller: logic.tabController,
+            children: [
+              Center(child: Text('1'),),
+              Center(child: Text('2'),),
+              Center(child: Text('3'),)
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

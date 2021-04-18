@@ -1,3 +1,4 @@
+import 'package:douban/page/mine/login/view.dart';
 import 'package:douban/page/mine/more/view.dart';
 import 'package:douban/utils/constants_page.dart';
 import 'package:douban/utils/screen_utils.dart';
@@ -41,15 +42,20 @@ class MinePage extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: Column(
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(80.0),
-                              color: Colors.black12),
-                          child: InkWell(
-                            child: Image.asset(
-                              Constancts.IMAGE_TAB_MINE + 'mine_ava.png',
-                              height: 80,
-                              width: 80,
+                        InkWell(
+                          onTap: (){
+                            Get.to(LoginPage());
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(80.0),
+                                color: Colors.black12),
+                            child: InkWell(
+                              child: Image.asset(
+                                Constancts.IMAGE_TAB_MINE + 'mine_ava.png',
+                                height: 80,
+                                width: 80,
+                              ),
                             ),
                           ),
                         ),
