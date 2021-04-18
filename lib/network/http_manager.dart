@@ -1,8 +1,14 @@
+import 'dart:io';
+
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
-import 'package:douban/network/dio_log_interceptor.dart';
+import 'package:douban/network/interceptor/common_parameter_interceptor.dart';
+import 'package:douban/network/proxy.dart';
+import 'package:douban/utils/app_util.dart';
+import 'file:///C:/Users/IDM-PC/Desktop/open_eyes_vide/lib/network/interceptor/dio_log_interceptor.dart';
 import 'package:douban/utils/loading_utils.dart';
 import 'code.dart';
-import 'response_interceptor.dart';
+import 'interceptor/response_interceptor.dart';
 import 'result_data.dart';
 import 'address.dart';
 
@@ -32,7 +38,19 @@ class HttpManager {
           headers: httpHeaders));
       _dio.interceptors.add(new DioLogInterceptor());
 //      _dio.interceptors.add(new PrettyDioLogger());
+      _dio.interceptors.add(new CommonParameterInterceptor());
       _dio.interceptors.add(new ResponseInterceptors());
+
+      if (!AppUtil.isReleaseMode()) {
+        (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+            (HttpClient client) {
+          client.findProxy = (uri) {
+            return "PROXY " + Proxy.HOST + ":" + Proxy.PORT;
+          };
+          client.badCertificateCallback =
+              (X509Certificate cert, String host, int port) => true;
+        };
+      }
     }
   }
 

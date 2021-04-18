@@ -1,7 +1,6 @@
-import 'package:douban/page/splash_page/view.dart';
+import 'package:douban/App.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 
 void main() async {
   //设置状态栏为白底黑字
@@ -14,11 +13,6 @@ void main() async {
     statusBarBrightness: Brightness.light,
   );
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(GetMaterialApp(
-    defaultTransition: Transition.fadeIn,
-    debugShowCheckedModeBanner: true,
-    color: Colors.white,
-    home: splash_pagePage(),
-  ));
+  runApp(App());
   SystemChrome.setSystemUIOverlayStyle(dark);
 }
