@@ -1,5 +1,7 @@
+import 'package:douban/page/mine/my_focus/view.dart';
 import 'package:douban/page/mine/register/view.dart';
 import 'package:douban/utils/screen_utils.dart';
+import 'package:douban/widght/WebViewPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +19,7 @@ class MineItem extends StatelessWidget {
         onTap: () {
           switch (value) {
             case 0:
-              Get.to(RegisterPage());
+              Get.to(myFocusPage());
               break;
             case 1:
               Get.snackbar("提示", "请先登录APP");
@@ -29,7 +31,8 @@ class MineItem extends StatelessWidget {
               Get.snackbar("提示", "请先登录APP");
               break;
             case 4:
-              Get.snackbar("提示", "请先登录APP");
+              WebView webView = new WebView(url: 'https://github.com/jacky-zhupengpeng/open_eyes_videv', title: '');
+              Get.to(webView);
               break;
           }
         },
