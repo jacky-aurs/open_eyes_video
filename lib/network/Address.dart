@@ -13,6 +13,8 @@ class Address{
  ///首页->发现
  static const String DISCOVER = "/api/v7/index/tab/discovery";
 
+ ///官方通知
+ static const String MESSAGE = "/api/v3/messages";
 
  ///获取验证码
  static const String GET_VERIFICATION_CODE = "/v1/api/sms/initialization";

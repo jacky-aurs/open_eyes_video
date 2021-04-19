@@ -42,8 +42,8 @@ class HttpManager {
       _dio.interceptors.add(new ResponseInterceptors());
 
       if (!AppUtil.isReleaseMode()) {
-        (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-            (HttpClient client) {
+        (_dio.httpClientAdapter as DefaultHttpClientAdapter)
+            .onHttpClientCreate = (HttpClient client) {
           client.findProxy = (uri) {
             return "PROXY " + Proxy.HOST + ":" + Proxy.PORT;
           };
@@ -89,6 +89,7 @@ class HttpManager {
     Response response;
     try {
       response = await _dio.get(api, queryParameters: params);
+      print("获取到的data数据${response.data}");
       if (withLoading) {
         LoadingUtils.dismiss();
       }

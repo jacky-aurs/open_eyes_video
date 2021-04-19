@@ -14,7 +14,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       defaultTransition: Transition.fadeIn,
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       color: Colors.white,
       home: splash_pagePage(),
       builder: EasyLoading.init(),

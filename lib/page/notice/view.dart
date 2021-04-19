@@ -1,5 +1,5 @@
-import 'package:douban/utils/constants_page.dart';
-import 'package:douban/widght/seach_page.dart';
+import 'package:douban/page/notice/interactive/view.dart';
+import 'package:douban/page/notice/push/view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,8 +10,10 @@ class NoticePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final NoticeLogic logic = Get.put(NoticeLogic());
     return MaterialApp(
+      color: Colors.white,
       home: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.white,
           appBar: TabBar(
             controller: logic.tabController,
             tabs: logic.tabs,
@@ -22,9 +24,11 @@ class NoticePage extends StatelessWidget {
           body: TabBarView(
             controller: logic.tabController,
             children: [
-              Center(child: Text('1'),),
-              Center(child: Text('2'),),
-              Center(child: Text('3'),)
+              pushPage(),
+              interactivePage(),
+              Center(
+                child: Text('3'),
+              )
             ],
           ),
         ),

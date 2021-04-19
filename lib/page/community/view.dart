@@ -4,15 +4,16 @@ import 'package:get/get.dart';
 import 'logic.dart';
 
 class CommunityPage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final CommunityLogic logic = Get.put(CommunityLogic());
     return MaterialApp(
+      color: Colors.white,
       home: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.white,
           appBar: TabBar(
-            controller:  logic.tabController,
+            controller: logic.tabController,
             tabs: logic.tabs,
             unselectedLabelColor: Colors.black,
             labelColor: Color(0xFF4a0b6d),
@@ -21,8 +22,12 @@ class CommunityPage extends StatelessWidget {
           body: TabBarView(
             controller: logic.tabController,
             children: [
-              Center(child: Text('1'),),
-              Center(child: Text('2'),)
+              Center(
+                child: Text('1'),
+              ),
+              Center(
+                child: Text('2'),
+              )
             ],
           ),
         ),
