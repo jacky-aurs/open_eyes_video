@@ -1,4 +1,3 @@
-import 'package:douban/network/Address.dart';
 import 'package:douban/network/http_manager.dart';
 import 'package:douban/page/mine/login/view.dart';
 import 'package:douban/repository/login_repository.dart';

@@ -17,6 +17,8 @@ class pushPage extends StatelessWidget {
 }
 
 void getData() {
-  MineRespository.getMessage(pushLogic().model.value)
-      .then((value) => pushLogic().model.value = value);
+  MineRespository.getMessage("")
+      .then((value) =>
+      print('object${value}')
+  );
 }
