@@ -1,57 +1,57 @@
 class PushModel {
-    List<MessageList> messageList;
-    int updateTime;
-    String nextPageUrl;
+  List<MessageList> messageList;
+  int updateTime;
+  String nextPageUrl;
 
-    PushModel({this.messageList, this.updateTime, this.nextPageUrl});
+  PushModel({this.messageList, this.updateTime, this.nextPageUrl});
 
-    PushModel.fromJson(Map<String, dynamic> json) {
+  PushModel.fromJson(Map<String, dynamic> json) {
     if (json['messageList'] != null) {
-    messageList = new List<MessageList>();
-    json['messageList'].forEach((v) {
-    messageList.add(new MessageList.fromJson(v));
-    });
+      messageList = new List<MessageList>();
+      json['messageList'].forEach((v) {
+        messageList.add(new MessageList.fromJson(v));
+      });
     }
     updateTime = json['updateTime'];
     nextPageUrl = json['nextPageUrl'];
-    }
+  }
 
-    Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.messageList != null) {
-    data['messageList'] = this.messageList.map((v) => v.toJson()).toList();
+      data['messageList'] = this.messageList.map((v) => v.toJson()).toList();
     }
     data['updateTime'] = this.updateTime;
     data['nextPageUrl'] = this.nextPageUrl;
     return data;
-    }
-    }
+  }
+}
 
-    class MessageList {
-    int id;
-    String title;
-    String content;
-    int date;
-    String actionUrl;
-    String icon;
-    bool viewed;
-    bool ifPush;
-    int pushStatus;
-    Null uid;
+class MessageList {
+  int id;
+  String title;
+  String content;
+  int date;
+  String actionUrl;
+  String icon;
+  bool viewed;
+  bool ifPush;
+  int pushStatus;
+  Null uid;
 
-    MessageList(
-    {this.id,
-    this.title,
-    this.content,
-    this.date,
-    this.actionUrl,
-    this.icon,
-    this.viewed,
-    this.ifPush,
-    this.pushStatus,
-    this.uid});
+  MessageList(
+      {this.id,
+      this.title,
+      this.content,
+      this.date,
+      this.actionUrl,
+      this.icon,
+      this.viewed,
+      this.ifPush,
+      this.pushStatus,
+      this.uid});
 
-    MessageList.fromJson(Map<String, dynamic> json) {
+  MessageList.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
     content = json['content'];
@@ -62,9 +62,9 @@ class PushModel {
     ifPush = json['ifPush'];
     pushStatus = json['pushStatus'];
     uid = json['uid'];
-    }
+  }
 
-    Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['title'] = this.title;
@@ -77,5 +77,5 @@ class PushModel {
     data['pushStatus'] = this.pushStatus;
     data['uid'] = this.uid;
     return data;
-    }
+  }
 }

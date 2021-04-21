@@ -1,10 +1,12 @@
 import 'dart:convert';
+import 'dart:io';
+
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:douban/network/Api.dart';
 import 'package:douban/network/interceptor/common_parameter_interceptor.dart';
 import 'package:douban/network/interceptor/response_interceptor.dart';
 import 'package:douban/utils/string_util.dart';
-import 'package:flutter/material.dart';
 
 class HttpManager {
   static const CONTENT_TYPE_JSON = "application/json";
@@ -73,7 +75,6 @@ class HttpManager {
     if (response.data is Map) {
       return response.data;
     }
-    print("数据${response.data.toString()}");
     return jsonDecode(response.data.toString());
   }
 }
